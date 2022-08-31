@@ -1,0 +1,166 @@
+@font-face {
+    font-family: UbuntoMono-Regular;
+    src: url(../fonts/UbuntoMono/UbuntuMono-Regular.ttf);
+}
+
+@font-face {
+    font-family: UbuntoMono-Bold;
+    src: url(../fonts/UbuntoMono/UbuntuMono-Bold.ttf);
+}
+
+@font-face {
+    font-family: NanumGothicCoding-Regular;
+    src: url(../fonts/NanumGothicCoding/NanumGothicCoding-Regular.ttf);
+}
+
+@font-face {
+    font-family: NanumGothicCoding-Bold;
+    src: url(../fonts/NanumGothicCoding/NanumGothicCoding-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    min-width: 285px;
+    min-height: auto;
+    position: relative;
+    background: #333;
+    border-radius: 20px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+        10px 10px 70px rgba(0, 0, 0, 0.25),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+main header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main header h1 {
+    font-size: 18px;
+    color: rgb(255, 136, 0);
+    font-family: UbuntoMono-Bold;
+}
+
+
+
+main .output {
+    display: grid;
+    grid-template: 3fr 2fr / 1fr;
+    gap: 5px;
+    height: 130px;
+    position: relative;
+    grid-column: span 4;
+    left: 20px;
+    width: calc(100% - 40px);
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: #3a3c2e;
+    background: #252525;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+}
+
+main .output .output-value {
+    color: #fff;
+    font-family: NanumGothicCoding-Regular;
+}
+
+main .output .output-value .expressions {
+    transition: font-size .5s cubic-bezier(.5,-0.08,.72,1.23);
+    font-size: 16px;
+}
+
+main .output .output-value .result {
+    transition: font-size .5s cubic-bezier(.5,-0.08,.72,1.23);
+    font-size: 16px;
+}
+
+.result-fz {
+    font-size: 20px !important;
+}
+
+
+
+main .keyboard {
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+}
+
+main .keyboard button {
+    font-family: NanumGothicCoding-Regular;
+    position: relative;
+    width: 50px;
+    height: 45px;
+    color: #fff;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+        inset 0 -8px 8px rgba(0, 0, 0, 0.25),
+        0 0 0 2px rgba(0, 0, 0, 0.3),
+        10px 20px 25px rgba(0, 0, 0, 0.4);
+}
+
+main .keyboard button::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 5px;
+    right: 5px;
+    background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
+    border-radius: 10px;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+        10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+}
+
+main .keyboard .plus {
+    font-size: 24px;
+    background: linear-gradient(180deg, #ffb100, #d49400);
+    font-family: NanumGothicCoding-Bold;
+}
+
+main .keyboard .plus::before {
+    background: linear-gradient(90deg, #ffb100, #d49400);
+    border-left: 1px solid #ad7900;
+    border-bottom: 1px solid #ad7900;
+    border-top: 1px solid #ad7900;
+}
+
+main .keyboard .math-operation {
+    color: rgb(255, 136, 0);
+    font-family: NanumGothicCoding-Bold;
+}
+
+main .keyboard button span {
+    position: relative;
+}
