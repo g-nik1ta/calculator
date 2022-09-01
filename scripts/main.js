@@ -2,6 +2,10 @@ let btns = document.querySelectorAll("button");
 let expressions = document.querySelector(".expressions");
 let result = document.querySelector(".result");
 
+document.addEventListener("DOMContentLoaded", () => {
+    if(localStorage.getItem('theme') == "true") themeFn();
+});
+
 btns.forEach(btn => {
     btn.addEventListener("click", () => {
         calculator.outputValue(btn.value);

@@ -22,26 +22,43 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 body {
     height: 100vh;
-    background-color: #333;
+    transition: background .3s ease-in-out;
+    background: #333;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.theme-switch-body {
+    transition: all .14s ease-in-out;
+    background: #fff;
 }
 
 main {
     min-width: 285px;
     min-height: auto;
     position: relative;
+    transition: all .14s ease-in-out;
     background: #333;
     border-radius: 20px;
     box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
         10px 10px 70px rgba(0, 0, 0, 0.25),
         inset -5px -5px 15px rgba(0, 0, 0, 0.5),
         inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.theme-switch-main {
+    transition: all .14s ease-in-out;
+    background: #fff;
+    box-shadow: 25px 25px 75px rgb(0 0 0 / 25%),
+        10px 10px 70px rgb(0 0 0 / 25%),
+        inset -5px -5px 15px rgb(200 200 200 / 50%),
+        inset 5px 5px 15px rgb(200 200 200 / 50%);
 }
 
 main header {
@@ -72,24 +89,32 @@ main .output {
     border: none;
     outline: none;
     padding: 10px;
-    color: #3a3c2e;
+    color: #fff;
+    transition: all .14s ease-in-out;
     background: #252525;
     border-radius: 10px;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
 }
 
+.theme-switch-output {
+    transition: all .14s ease-in-out;
+    background: #e4e4e4 !important;
+    color: #3a3c2e !important;
+    box-shadow: 0 0 0 2px rgb(200 200 200 / 75%) !important;
+}
+
 main .output .output-value {
-    color: #fff;
+    /* color: #fff; */
     font-family: NanumGothicCoding-Regular;
 }
 
 main .output .output-value .expressions {
-    transition: font-size .5s cubic-bezier(.5,-0.08,.72,1.23);
+    transition: font-size .5s cubic-bezier(.5, -0.08, .72, 1.23);
     font-size: 16px;
 }
 
 main .output .output-value .result {
-    transition: font-size .5s cubic-bezier(.5,-0.08,.72,1.23);
+    transition: font-size .5s cubic-bezier(.5, -0.08, .72, 1.23);
     font-size: 16px;
 }
 
@@ -120,11 +145,24 @@ main .keyboard button {
     font-size: 20px;
     user-select: none;
     border-radius: 10px;
+    transition: all .14s ease-in-out;
     background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
     box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
         inset 0 -8px 8px rgba(0, 0, 0, 0.25),
         0 0 0 2px rgba(0, 0, 0, 0.3),
         10px 20px 25px rgba(0, 0, 0, 0.4);
+}
+
+.theme-switch-button {
+    transition: all .14s ease-in-out;
+    font-family: NanumGothicCoding-Bold !important;
+    color: #767676 !important;
+    border: 2px solid #bfbfbf  !important;
+    box-shadow: inset -8px 0 8px rgb(180 180 180 / 15%), 
+        inset 0 -8px 8px rgb(180 180 180 / 25%), 
+        0 0 0 2px rgb(180 180 180 / 30%), 
+        10px 20px 25px rgb(180 180 180 / 40%) !important;
+    background: linear-gradient(180deg, #f0f0f0, #cbcbcb) !important;
 }
 
 main .keyboard button::before {
@@ -134,6 +172,7 @@ main .keyboard button::before {
     left: 2px;
     bottom: 5px;
     right: 5px;
+    transition: all .14s ease-in-out;
     background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
     border-radius: 10px;
     box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
@@ -143,10 +182,25 @@ main .keyboard button::before {
     border-top: 1px solid #0009;
 }
 
+.theme-switch-button::before {
+    transition: all .14s ease-in-out;
+    background: linear-gradient(90deg, #d4d4d4, #bababa) !important;
+    box-shadow: -5px -5px 15px rgb(255 255 255 / 10%), 
+        10px 5px 10px rgb(0 0 0 / 15%) !important;
+    border-left: 1px solid #fff4 !important;
+    border-bottom: 1px solid #fff4 !important;
+    border-top: 1px solid #fff9 !important;
+}
+
 main .keyboard .plus {
     font-size: 24px;
     background: linear-gradient(180deg, #ffb100, #d49400);
     font-family: NanumGothicCoding-Bold;
+}
+
+.theme-switch-plus {
+    transition: all .14s ease-in-out;
+    background: linear-gradient(180deg, #ffbf2f, #ffb200) !important;
 }
 
 main .keyboard .plus::before {
@@ -156,11 +210,57 @@ main .keyboard .plus::before {
     border-top: 1px solid #ad7900;
 }
 
+.theme-switch-plus::before {
+    transition: all .14s ease-in-out;
+    background: linear-gradient(90deg, #fbb517, #ffb200) !important;
+    border-left: 1px solid #edac12 !important;
+    border-bottom: 1px solid #edac13 !important;
+    border-top: 1px solid #eda90d !important;
+}   
+
 main .keyboard .math-operation {
-    color: rgb(255, 136, 0);
+    color: rgb(255, 136, 0) !important;
     font-family: NanumGothicCoding-Bold;
 }
 
 main .keyboard button span {
     position: relative;
+}
+
+.theme {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 74px;
+}
+
+.theme:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.theme::after {
+    content: '';
+    display: block;
+    width: 11px;
+    height: 11px;
+    transition: left 1s ease-in;
+    border-radius: 50%;
+    background: #d7d7d7;
+    position: absolute;
+    bottom: 45%;
+    left: 40%;
+}
+
+.theme img {
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    margin: 15px;
+    width: 40px;
+}
+
+.theme-switch::after {
+    transition: left 1s ease-in;
+    left: 34%;
 }
